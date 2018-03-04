@@ -1,1 +1,7 @@
 theme: jekyll-theme-minimal
+
+title: 'nonRedact'
+description: 'all typos unsuppressed'
+
+markdown: kramdown
+repository: siriobalmelli/nonredact
