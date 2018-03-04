@@ -1,0 +1,57 @@
+# Episode 1: "not a git"
+
+Anthony and I kick off what we hope will be a regular series of videos,
+	wherein we detail "what programmers really do";
+	live, unscripted, unedited, un-(gulp)-censored.
+
+In this episode:
+
+1. The audio/video setup for our podcast:
+	- iTunes, Anthony over Skype and myself on the local mic and webcam
+	- [Pro Tools](https://www.avid.com/pro-tools)
+	- [Soundflower](https://github.com/mattingalls/Soundflower)
+	- [Vidrio](https://vidr.io/)
+
+1. Some general humor and memes, and tech mentions, including:
+	- [TaskWarrior](https://taskwarrior.org/)
+
+1. An in-depth rundown of [notagit](https://siriobalmelli.github.io/notagit/),
+		our open-source utility for managing secure private Git servers,
+		and how to build the "poor man's Git cluster".
+	- Working with Git from BASH on both Linux and macOS (OS X)
+	- How to access Git repos over SSH from a Windows machine,
+		(and a lot of time spent waiting for Windows to install things,
+		during which we indulge in some obligatory Redmond-bashing).
+
+Along the way, we:
+
+- Use [VirtualBox](https://www.virtualbox.org/) and show off Microsoft's pre-built
+	[Windows 10 development appliances](https://developer.microsoft.com/en-us/windows/downloads/virtual-machines)
+
+- Install [Git Extensions](https://gitextensions.github.io/) on Windows.
+
+- Mention [Google's FileStream](https://support.google.com/a/answer/7491144?hl=en)
+	and what it's FAT32 representation (FUSE? just a guess)
+	does to home-grown small-business apps from the 90s :P
+
+- Use [Pastebin](https://www.paste.org/p/home) with [wget](https://linux.die.net/man/1/wget)
+
+- Unscrupolously edit [/etc/sudoers](https://linux.die.net/man/5/sudoers)
+
+- Set up a [crontab file](http://www.adminschoice.com/crontab-quick-reference)
+
+In the background we play:
+
+- [Circus Maximus' Nine album](http://www.circusmaximussite.com/release/nine/)
+- [Coldplay's Ghost Stories](http://coldplay.com/recordings/ghost_stories/)
+- [Daft Punk's Random Access Memories](http://www.randomaccessmemories.com/)
+
+These all belong to their respective authors and we thank them profusely
+	for making good art for the world to enjoy and for us to buy.
+Please don't sue me ;)
+
+Also, we use swearwords.
+They are not meant offensively in any case - despite the fact that we (mostly I)
+	can be quite opinionated.
+Forgiveness is divine; we beg yours and hope any glaring insanities
+	only serve to make you shake your head and laugh ;)
