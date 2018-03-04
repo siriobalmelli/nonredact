@@ -4,6 +4,8 @@ Anthony and I kick off what we hope will be a regular series of videos,
 	wherein we detail "what programmers really do";
 	live, unscripted, unedited, un-(gulp)-censored.
 
+This is the [YouTube episode](https://youtu.be/WwjgixrNrjo)
+
 In this episode:
 
 1. The audio/video setup for our podcast:
