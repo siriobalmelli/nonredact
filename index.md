@@ -16,10 +16,11 @@ Episodes are never edited or overdubbed in post;
 	what happened is what you see.
 
 We're putting this together mostly so we can:
-	- answer the question *"yeah, but what do you actually DO?"*
-	- inject a bit of humor into our work
-	- document some of the Open Source work we're doing
-	- have a reason to talk nonsense while drinking coffee
+
+- answer the question *"yeah, but what do you actually DO?"*
+- inject a bit of humor into our work
+- document some of the Open Source work we're doing
+- have a reason to talk nonsense while drinking coffee
 
 You guess which one is most important ;)
 
