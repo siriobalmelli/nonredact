@@ -1,4 +1,9 @@
-with import <nixpkgs> { };
+{	# deps
+	system ? builtins.currentSystem,
+	nixpkgs ? import <nixpkgs> { inherit system; },
+}:
+
+with nixpkgs;
 
 let jekyll_env = bundlerEnv rec {
     name = "jekyll_env";
@@ -9,10 +14,19 @@ let jekyll_env = bundlerEnv rec {
   };
 in
   stdenv.mkDerivation rec {
-    name = "jekyll_env";
-    buildInputs = [ jekyll_env ];
+    name = "nonredact";
+		outputs = [ "out" ];
+    buildInputs = [
+			git
+			jekyll_env
+			which
+		];
 
-    shellHook = ''
-      exec ${jekyll_env}/bin/jekyll serve --watch
-    '';
+	# just work with the current directory (aka: Git repo), no fancy tarness
+	src = ./.;
+	buildPhase = "${jekyll_env}/bin/jekyll build --source=$src --destination=$out";
+
+  shellHook = ''
+    exec ${jekyll_env}/bin/jekyll serve --watch
+  '';
 }
