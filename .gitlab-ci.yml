@@ -1,0 +1,4 @@
+image: nixos/nix:latest
+
+script:
+  - uname -r 
