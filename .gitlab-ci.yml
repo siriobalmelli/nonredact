@@ -1,4 +1,5 @@
 image: nixos/nix:latest
 
-script:
-  - uname -r 
+job:
+  script:
+    - uname -r
