@@ -2,4 +2,4 @@ image: nixos/nix:latest
 
 job:
   script:
-    - nix-shell 
+    - nix-build
