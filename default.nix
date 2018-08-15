@@ -27,7 +27,11 @@ in
 
 	# just work with the current directory (aka: Git repo), no fancy tarness
 	src = ./.;
-	buildPhase = "${jekyll_env}/bin/jekyll build --source=$src --destination=$out";
+	buildPhase = ''
+	'';
+	installPhase = ''
+			${jekyll_env}/bin/jekyll build --source=$src --destination=$out
+	'';
 
   shellHook = ''
     exec ${jekyll_env}/bin/jekyll serve --watch
