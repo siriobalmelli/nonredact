@@ -1,39 +1,34 @@
-{	# deps
-	system ? builtins.currentSystem,
-	nixpkgs ? import <nixpkgs> { inherit system; },
-}:
-
-with nixpkgs;
+with (import <nixpkgs> {});
 
 # le one-liner to produce le gemset.nix
 # nix-shell -p bundler --command 'bundler package --no-install --path vendor && rm -rf .bundler vendor' && $(nix-build '<nixpkgs>' -A bundix)/bin/bundix && rm result
 
 let jekyll_env = bundlerEnv rec {
-    name = "jekyll_env";
-    ruby = ruby_2_5;
-    gemfile = ./Gemfile;
-    lockfile = ./Gemfile.lock;
-    gemset = ./gemset.nix;
+  name = "jekyll_env";
+  ruby = ruby_2_5;
+  gemfile = ./Gemfile;
+  lockfile = ./Gemfile.lock;
+  gemset = ./gemset.nix;
   };
 in
   stdenv.mkDerivation rec {
     name = "nonredact";
-		outputs = [ "out" ];
+    outputs = [ "out" ];
     buildInputs = [
-			git
-			jekyll_env
-			which
-		];
+      git
+      jekyll_env
+      which
+    ];
 
-	# just work with the current directory (aka: Git repo), no fancy tarness
-	src = ./.;
-	buildPhase = ''
-	'';
-	installPhase = ''
-			${jekyll_env}/bin/jekyll build --source=$src --destination=$out
-	'';
+    # just work with the current directory (aka: Git repo), no fancy tarness
+    src = ./.;
 
-  shellHook = ''
-    exec ${jekyll_env}/bin/jekyll serve --watch
-  '';
+    # there is no Makefile and no build products - work with source dir directly
+    installPhase = ''
+        jekyll build --source=$src --destination=$out
+    '';
+
+    shellHook = ''
+        exec jekyll serve --watch
+    '';
 }
