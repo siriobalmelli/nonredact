@@ -89,6 +89,3 @@ A tool, to be useful, has to:
 
 The focus is on simplicity: in each of these areas above, if there is
 a *simpler* way to achieve the goal, that way is best.
-
-A brilliant reference on the matter is
-[Max Kanat-Alexander's Code Simplicity](http://shop.oreilly.com/product/0636920022251.do).
