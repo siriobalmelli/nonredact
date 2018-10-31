@@ -9,8 +9,8 @@ This blog began with an idea of doing companion YouTube screencasts,
 but for one reason or another the video thing had bugs and I kept writing.
 
 The purpose is mostly to
-~publicly declare ideas for which I will be ridiculed in the future~
-host those rants or notes which I may want to refer back to in the future.
+~~publicly declare ideas for which I will be ridiculed in the future~~
+host those rants or notes which I may want to refer back to later.
 
 Everything in this repo is free for you to use should you find it helpful;
 though it is given without any warranty whatsoever.

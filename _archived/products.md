@@ -52,7 +52,7 @@ and they "nest" or "stack", for example:
 - an OS/container is a *tool* for a deployed service *system*.
 - a deployment is a *tool* in redundant or distributed *system*.
 
-From this we can see that:
+From this we see that:
 **a tool can only be evaluated in the context of its parent system**.
 
 As a side note, this layering is an example of
