@@ -52,34 +52,39 @@ and they "nest" or "stack", for example:
 - an OS/container is a *tool* for a deployed service *system*.
 - a deployment is a *tool* in redundant or distributed *system*.
 
-This layering is an example of
-[abstraction](https://stackoverflow.com/questions/21220155/what-does-abstraction-mean-in-programming).
+From this we can see that:
+**a tool can only be evaluated in the context of its parent system**.
 
-A tool can only be evaluated in the context of its parent system.
+As a side note, this layering is an example of
+[abstraction](https://www.etymonline.com/word/abstraction).
+Abstraction is a core concept in computer science and *well*
+worth some study.
+Here is a good discussion of
+[abstraction on stack overflow](https://stackoverflow.com/questions/21220155/what-does-abstraction-mean-in-programming).
 
 ## Metrics
 
 A tool, to be useful, has to:
 
-1. say what it does:
+1. **say what it does**:
 	clear purpose, usable documentation
 
-1. explain what it does:
+1. **explain what it does**:
 	tests, examples
 
-1. do what it says:
+1. **do what it says**:
 	give valid output for valid input
 
-1. show what it does:
+1. **show what it does**:
 	useful logging/printing, but only if asked
 
-1. know what it does:
+1. **know what it does**:
 	have a stated purpose and do nothing else
 
-1. be reliable:
+1. **be reliable**:
 	always visibly report errors, never falsely report success
 
-1. be comprehensible:
+1. **be comprehensible**:
 	easy to understand and modify both code and documentation
 
 The focus is on simplicity: in each of these areas above, if there is

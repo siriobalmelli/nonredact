@@ -1,7 +1,7 @@
 ---
 title: Security of Access Cards
 author: Sirio Balmelli
-date: 24 July 2018
+date: 2018-07-24
 fontfamily: cmbright
 fontsize: 14pt
 papersize: A4
