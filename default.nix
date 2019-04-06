@@ -14,14 +14,9 @@ in
   stdenv.mkDerivation rec {
     name = "nonredact";
     outputs = [ "out" ];
-    buildInputs = [
-      git
-      jekyll_env
-      which
-    ];
+    buildInputs = [ jekyll_env ];
 
-    # just work with the current directory (aka: Git repo), no fancy tarness
-    src = ./.;
+    src = if lib.inNixShell then null else nix-gitignore.gitignoreSource [] ./.;
 
     # there is no Makefile and no build products - work with source dir directly
     installPhase = ''
