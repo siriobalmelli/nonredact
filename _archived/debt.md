@@ -54,11 +54,11 @@ because a bugfix or new feature request demands touching the same area of code.
 
     There is also an uncertainty coefficient here, refactoring could:
 
-    i. remove the bug outright through simplification (complete win);
-    i. remove the bug but introduce unexpected issues e.g. because of
-        overly simplistic models etc (tradeoff); or
-    i. not only fail to touch the bug but introduce new bugs
-        because of code immaturity (pyrrhic victory).
+    -   remove the bug outright through simplification (complete win);
+    -   remove the bug but introduce unexpected issues e.g. because of
+            overly simplistic models etc (tradeoff); or
+    -   not only fail to touch the bug but introduce new bugs
+            because of code immaturity (pyrrhic victory).
 
 
 1. Known technical debt but not affecting current performance or reliability.
