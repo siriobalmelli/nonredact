@@ -38,6 +38,14 @@ Here is a handy (humorously intended) guide to complication:
 
 1. The authoritative dissertation on [How To Ask Questions The Smart Way][15]
 
+## Philosophical Note
+
+Simplicity is reached by finding common denominators
+(one example which springs to mind is UNIX's "everything is a file" approach).
+
+Common denominators are tested by asking *why?* and *how is this useful?*
+(example: what problems does the "everything is a file" approach solve?).
+
 ## Motivation
 
 This may come across as a bit snarky - I've had a long day getting

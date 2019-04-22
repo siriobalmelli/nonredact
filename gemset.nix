@@ -179,10 +179,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0h0g75qh063f3hx4x7sd2f4h73bvnm9gfdii004l488ljmqmsyc2";
+      sha256 = "14659ap360gzmrxl8mb28ys6mld7xw3q4q7pqy0l1cn67szdq779";
       type = "gem";
     };
-    version = "2.10.0";
+    version = "2.11.0";
   };
   "http_parser.rb" = {
     source = {
@@ -663,10 +663,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0sy96cc8i5y4p67fhf4d9c6sg8ymrrva21zyvzw55l0pa1582wx2";
+      sha256 = "02bjydih0j515szfv9mls195cvpyidh6ixm7dwbl3s2sbaxxk5s4";
       type = "gem";
     };
-    version = "1.10.2";
+    version = "1.10.3";
   };
   octokit = {
     dependencies = ["sawyer"];
