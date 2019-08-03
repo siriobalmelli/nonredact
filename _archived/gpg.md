@@ -378,8 +378,10 @@ so recovery is possible on any system.
     # You will see the revocation certificate in '~/.gnupg/openpgp-revocs.d'
 
 
-    # sign new key with old key
-    $ gpg -u 0xAA2F5F3376EAAC78 --edit-key 0x9ECD1297468DB871 tsign
+    # Sign new key with old key.
+    # This is done with a non-revocable trust signature (nrt), so if old key
+    # is compromised it cannot affect chain of trust int he future.
+    $ gpg -u 0xAA2F5F3376EAAC78 --edit-key 0x9ECD1297468DB871 nrtsign
     Secret key is available.
 
     sec  ed25519/0x9ECD1297468DB871
@@ -413,6 +415,7 @@ so recovery is possible on any system.
        (2) I have done casual checking.
        (3) I have done very careful checking.
 
+    # NOTE careful checking
     Your selection? (enter '?' for more information): 3
     Please decide how far you trust this user to correctly verify other users keys
     (by looking at passports, checking fingerprints from different sources, etc.)
@@ -420,12 +423,14 @@ so recovery is possible on any system.
       1 = I trust marginally
       2 = I trust fully
 
+    # NOTE full trust
     Your selection? 2
 
     Please enter the depth of this trust signature.
     A depth greater than 1 allows the key you are signing to make
     trust signatures on your behalf.
 
+    # new key can continue the chain of trust from the old key
     Your selection? 5
 
     Please enter a domain to restrict this signature, or enter for none.
@@ -443,9 +448,12 @@ so recovery is possible on any system.
     $
 
 
-    # sign old key with new key
+    # Sign old key with new key.
+    # This IS revocable, so if old key is later compromised the new key
+    # can revoke trust.
     $ gpg -u 0x9ECD1297468DB871 --edit-key 0xAA2F5F3376EAAC78 tsign
     # ... output elided, same as above
+    # NOTE however that "depth" should be 1: old key CANNOT sign for new key.
     ```
 
 1. Archive master key on offline media (e.g. USB key):
