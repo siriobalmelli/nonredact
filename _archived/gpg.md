@@ -531,6 +531,37 @@ so recovery is possible on any system.
     gpg --send-key 0xAA2F5F3376EAAC78
     ```
 
+1. key maintenance:
+
+    Periodic key maintenance is important to:
+
+    - remember the master key and scrypt passphrases
+        (since these are not used every day and never written down)
+    - prevent key expiration by accident
+    - maintain a public record showing a key is actively maintained
+    - re-send the public key to keyservers, making sure it will be found if searched for
+
+    ```bash
+    # mount the offline storage for your master key, here it is '/mnt/vault',
+    # then decrypt directly back into 'private-keys-v1.d'
+    $ (umask 0077; scrypt dec \
+        /mnt/vault/AE9514048662882E0609A349491637E661F5F6DB.key.scrypt \
+        ~/.gnupg/private-keys-v1.d/AE9514048662882E0609A349491637E661F5F6DB.key)
+    Please enter passphrase:
+
+    # note this is the FINGERPRINT of the master key
+    gpg --quick-set-expire "EEA0 24EF 5740 C5DB C9FE  B7C5 AA2F 5F33 76EA AC78" 1y
+    # run again with '*' to update expiry on subkeys
+    gpg --quick-set-expire "EEA0 24EF 5740 C5DB C9FE  B7C5 AA2F 5F33 76EA AC78" 1y '*'
+
+    # send update public key out to every keyserver configured in gpg.conf
+    for a in $(sed -nE 's/^keyserver (.*)/\1/p' ~/.gnupg/gpg.conf); do
+        gpg --keyserver "$a" --send-key 0x9ECD1297468DB871
+    done
+
+    # delete secret key (it is unchanged by updating of expiry)
+    $ rm ~/.gnupg/private-keys-v1.d/AE9514048662882E0609A349491637E661F5F6DB.key
+    ```
 ## useful references
 
 - <https://eligible.com/blog/commit-signing-with-git-hub-keybase-and-gpg/>
