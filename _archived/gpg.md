@@ -524,6 +524,8 @@ so recovery is possible on any system.
     to a smartcard it may be a good idea to use `scrypt` to save a copy
     to an offliune vault like for the master key above.
 
+    NOTE: the [SoloKey](https://github.com/solokeys/solo) is very interesting.
+
 1. publish new key and any modified keys:
 
     ```bash
