@@ -51,15 +51,16 @@ It must be:
 ## The solution: [PlantUML]
 
 1. The Unified Modling Language ([UML] for short) itself is very powerful,
-and has quite a bit of pedigree:
-<https://en.m.wikipedia.org/wiki/Unified_Modeling_Language>
+and has quite a bit of pedigree: <https://en.m.wikipedia.org/wiki/Unified_Modeling_Language>
 
-2. [PlantUML] has a very comprehensive array of tooling available:
-<http://plantuml.com/running>
+2. [PlantUML] has a very comprehensive array of tooling available: <http://plantuml.com/running>
+
+3. There is a comprehensive [standard library](https://github.com/plantuml/plantuml-stdlib)
+with support for e.g. AWS or the [C4 Model].
 
 ### Example
 
-1. Some basic UML Code using the [C4 Model](https://c4model.com/):
+1. Some basic UML Code using the [C4 Model]:
     ```uml
     @startuml C4_Elements
 
@@ -87,14 +88,13 @@ and has quite a bit of pedigree:
 1. We can also ask <http://plantuml.com> to render our file for us,
 by linking to a URL on *their* site with an argument pointing them back
 to our `.iuml` file in this git repo:
-
-    This is the markdown code:
+    - This is the markdown code:
     ```markdown
     ![rendered diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/siriobalmelli/nonredact/master/assets/diagram.iuml)
     ```
-
-    And this is the rendered diagram:
+    - And this is the rendered diagram:
     ![rendered diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/siriobalmelli/nonredact/master/assets/diagram.iuml)
 
+[C4 Model]: https://c4model.com/
 [UML]: http://uml.org/
 [PlantUML]: http://plantuml.com/
