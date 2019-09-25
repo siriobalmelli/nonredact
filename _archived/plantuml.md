@@ -1,13 +1,13 @@
 ---
 layout:		default
-title:		Text-Driven Diagrams and Documentation
+title:		Text-driven Diagrams
 date:		2019-09-25
 categories: articles
 ---
 
-# text-driven diagrams and documentation
+# Text-driven Diagrams
 
-*or, how I learned to stop worrying and love [PlantUML](http://plantuml.com/)*
+*or, how I learned to stop worrying and love [PlantUML]*
 
 ## Motivation
 
@@ -18,15 +18,44 @@ The need to be able to quickly set down and *show*, visually:
 - software structure (modules, dependencies)
 - physical infrastructure (cabling, ports)
 
-... combined with the need to:
+It must be:
 
-- version control this data
-- manipulate it with existing tools that handle text data
-- render it locally or have it rendered on the web
+1. Text-based:
+    - can be version-controlled alongside code
+    - can be manipulated with existing text tools (`vim`, `sed`, `grep`, etc)
 
-Whatever else, it must also *be terse* and *high-level*,
-something like [GraphViz](https://graphviz.org/) is too complex
-for this use case.
+    This excludes visual-only tools such as:
+    - [draw.io](https://www.draw.io/)
+    - [visio](https://products.office.com/en-ww/visio)
+    - [lucidchart](https://www.lucidchart.com)
+
+1. *Terse* and *high-level*:
+    - very quick to use
+    - approachable by non-coders (managers, sysadmins, designers)
+
+    This excludes powerful but complex tools like:
+    - [GraphViz](https://graphviz.org/).
+
+1. Able to be rendered locally, without sending data elsewhere:
+    - can be included in a CI pipeline
+    - can be used without violating privacy
+
+    This excludes cloud rendering platforms such as:
+    - [yuml.me](https://yuml.me/)
+    - [structurizr](https://structurizr.com/)
+
+    This also excludes rendering platforms which do not have a CLI
+    interface, such as:
+    - [drawthe.net](https://github.com/cidrblock/drawthe.net)
+
+## The solution: [PlantUML]
+
+1. The Unified Modling Language ([UML] for short) itself is very powerful,
+and has quite a bit of pedigree:
+<https://en.m.wikipedia.org/wiki/Unified_Modeling_Language>
+
+2. [PlantUML] has a very comprehensive array of tooling available:
+<http://plantuml.com/running>
 
 ### Example
 
@@ -52,12 +81,20 @@ for this use case.
     ```bash
     nonredact$ plantuml -pipe <assets/diagram.iuml >out.png
     ```
+
     This means any CI pipeline can do this, no web services required!
 
-1. We can also ask <plantuml.com> to render our file for us,
+1. We can also ask <http://plantuml.com> to render our file for us,
 by linking to a URL on *their* site with an argument pointing them back
-to this github page:
+to our `.iuml` file in this git repo:
+
+    This is the markdown code:
     ```markdown
     ![rendered diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/siriobalmelli/nonredact/master/assets/diagram.iuml)
     ```
+
+    And this is the rendered diagram:
     ![rendered diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/siriobalmelli/nonredact/master/assets/diagram.iuml)
+
+[UML]: http://uml.org/
+[PlantUML]: http://plantuml.com/
