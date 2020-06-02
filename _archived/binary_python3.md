@@ -1,22 +1,23 @@
 # Python3 Binary Cheatsheet
 
-1. Types:
-    - `int` when computing natively
-    - `bytes` for immutable data
-    - `bytearray` for mutable bytes
-    - `struct` as a parser and container for bytes
-    - `string` for hex representations and I/O with humans or tooling
+## Types:
 
+- `int` when computing natively
+- `bytes` for immutable data
+- `bytearray` for mutable bytes
+- `struct` as a parser and container for bytes
+- `string` for hex representations and I/O with humans or tooling
 
-1. `string` -> `int` -> `string`:
+## string -> int -> string:
+
 ```python
 i = int('0x1001', 16)  # 4097
 hex(i)
 # '0x1001'
 ```
 
+## int -> bytes:
 
-1. `int` -> `bytes`:
 ```python
 i = 12  # 12
 
@@ -41,8 +42,8 @@ lb_i == lba_i
 # True
 ```
 
+## int -(struct)-> bytes:
 
-1. `int` -(`struct`)-> `bytes`
 ```python
 import struct
 
@@ -57,8 +58,8 @@ s4 == s8[0:4]
 # True
 ```
 
+## bytes -> string:
 
-1. `bytes` -> `string`
 ```python
 s4 = int('0x1004', 16).to_bytes(4, 'little')  # b'\x04\x10\x00\x00'
 
