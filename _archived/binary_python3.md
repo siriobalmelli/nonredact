@@ -74,3 +74,10 @@ import struct
 
 hex(struct.unpack('<I', s4)[0])  # '0x1004'
 ```
+
+## string -> bytearray -> string
+
+```python
+ba = bytearray.fromhex('e77bd7f6e4ce3e8c1e8812791e2add7c')  # b'\xe7{\xd7\xf6\xe4\xce>\x8c\x1e\x88\x12y\x1e*\xdd|'
+ba.hex()  # 'e77bd7f6e4ce3e8c1e8812791e2add7c'
+```
