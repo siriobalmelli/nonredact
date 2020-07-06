@@ -9,6 +9,13 @@ categories: articles
 
 *or, how I learned to stop worrying and love [PlantUML]*
 
+### post-mortem
+
+I was wrong - PlantUML has no proven a sound tool for diagram generation in practice.
+
+I have since switched to [mermaid](https://mermaid-js.github.io/mermaid/#/),
+and am leaving this post up as a reminder of what *not* to use.
+
 ## Motivation
 
 The need to be able to quickly set down and *show*, visually:
