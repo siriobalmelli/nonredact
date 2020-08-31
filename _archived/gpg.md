@@ -544,6 +544,11 @@ so recovery is possible on any system.
     - re-send the public key to keyservers, making sure it will be found if searched for
 
     ```bash
+    # update gpg's view of the world and back up
+    $ gpg --refresh-keys
+    $ gpg --update-trustdb
+    $ gpg --export-ownertrust > otrust.txt
+
     # mount the offline storage for your master key, here it is '/mnt/vault',
     # then decrypt directly back into 'private-keys-v1.d'
     $ (umask 0077; scrypt dec \
@@ -564,6 +569,7 @@ so recovery is possible on any system.
     # delete secret key (it is unchanged by updating of expiry)
     $ rm ~/.gnupg/private-keys-v1.d/AE9514048662882E0609A349491637E661F5F6DB.key
     ```
+
 ## useful references
 
 - <https://eligible.com/blog/commit-signing-with-git-hub-keybase-and-gpg/>
