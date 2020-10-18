@@ -1,7 +1,7 @@
-.DS_Store
-.*.sw[op]
-_site*
 *.pdf
-result
-.bundle
 *.png
+.*.sw[op]
+.DS_Store
+.bundle
+_site*
+result
