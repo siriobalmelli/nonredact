@@ -1,6 +1,6 @@
 ---
 layout:		default
-title:		Digital Identity: GPG keys and subkeys
+title:		Digital Identity, GPG keys and subkeys
 date:		2019-07-31
 categories: articles
 ---

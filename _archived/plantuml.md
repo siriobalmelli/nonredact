@@ -16,6 +16,16 @@ I was wrong - PlantUML has no proven a sound tool for diagram generation in prac
 I have since switched to [mermaid](https://mermaid-js.github.io/mermaid/#/),
 and am leaving this post up as a reminder of what *not* to use.
 
+Mermaid graphs are simple, they look like this:
+
+<div class="mermaid">
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+</div>
+
 ## Motivation
 
 The need to be able to quickly set down and *show*, visually:
