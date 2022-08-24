@@ -1,9 +1,8 @@
 {
-  system ? builtins.currentSystem,
   nixpkgs ? import (builtins.fetchGit {
     url = "https://siriobalmelli@github.com/siriobalmelli-foss/nixpkgs.git";
-    ref = "master";
-    }) {},
+    ref = "refs/tags/sirio-2022-08-24";
+    }) { },
 }:
 
 with nixpkgs;
